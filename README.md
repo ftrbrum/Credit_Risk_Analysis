@@ -1,2 +1,2 @@
-# Credit_Risk_Analysis
+# linear_regression_salary
 Module 17
