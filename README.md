@@ -4,7 +4,7 @@ Module 17
 
 ## Overview of Analysis:
 
-We have been asked to analyze Amazon reviews written by members of the paid Amazon Vine program.  We have chosen a random dataset (sports) and used PySpark to perform the ETL process to extract the dataset, transform the data, connect to an AWS RDS instance, and load the transformed data into pgAdmin. Next we used PySpark to determine if there was any bias toward favorable reviews from Vine members in the dataset. The analysis is for SellBy stakeholders
+We are going to apply machine learning to solve the real world challenge of credit card risk.  Credit risk is an unbalanced classification problem as good loans easily outnumber risky loans.  We will employ different techniques to train and evaluate models with unbalanced classes using imbalanced-learn and scikit-learn libraries to build and evaluate the models with resampling.  We will oversample our data using RandomOverSampler and SMOTE algorithms and undersample the data with the ClusterCentroids algorithm.  Next we will use a combinatorial approach of over and undersampling using the SMOTEENN algorithm.  That will be followed by compare two machine learning models, BalancedRandomForestClassifier and EasyEnsembleClassifier, that reduce bias to predict credit risk.
 
 
 ## Resources:
@@ -60,7 +60,7 @@ This DataFrame was used to create 2 new DataFrames to sort our data.  One DataFr
 ![vine_program_n.png](Images/vine_program_n.png) <br/>
 
 
-## Results of VIne Reviews
+## Results of Vine Reviews
 
 - 61948 total amount of combined reviews<br/>
 
@@ -77,6 +77,6 @@ This DataFrame was used to create 2 new DataFrames to sort our data.  One DataFr
 
 ## Summary
 
-We can deterrmine from our data that there is not a positivity bias for reviews in the Vine program.  Over 99.5% of 5 star reviews in the sports category were from non-Vine members.  We beleive that Vine members have a tendency to be more critical in the reviews of products.  
+We can deterrmine from our data that there is not a positivity bias for reviews in the Vine program.  Over 99.5% of 5 star reviews in the sports category were from non-Vine members.  We believe that Vine members have a tendency to be more critical in the reviews of products.  
 
 To get a better understanding of the data we can use the "verified_purchase" column to sort reviews based on purchase.  That would be able to tell us how many people that purchased the products gave favourable reviews vs non-purchasers.
