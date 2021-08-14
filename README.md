@@ -24,59 +24,26 @@ Data:<br/>
 [LoanStats_2019Q1.csv](Challenge/Resources/LoanStats_2019Q1.csv)<br/>
 
 
-## Amazon Reviews Dataset:
+## Results:
 
-We extracted the Amazon Review Dataset and created a DataFrame.  That DataFrame was transformed into four new DataFrames and loaded into tables in pgAdmin.
+Naive Random Oversampling
+![oversampling_imbalanced.png](Challenge/Images/oversampling_imbalanced.png) <br/>
 
-Initial DataFrame <br/>
-![dataset.png](Images/dataset.png) <br/>
+SMOTE Oversampling
+![SMOTE_oversampling_imbalanced.png](Challenge/Images/SMOTE_oversampling_imbalanced.png) <br/>
 
-Customer DataFrame <br/>
-![customers_df.png](Images/customers_df.png) <br/>
+Cluster Centroids
+![undersampling_imbalanced.png](Challenge/Images/undersampling_imbalanced.png) <br/>
 
-Products DataFrame <br/>
-![products_df.png](Images/products_df.png) <br/>
+SMOTEENN
+![over_under_sampling_imbalanced.png](Challenge/Images/over_under_sampling_imbalanced.png) <br/>
 
-Review ID DataFrame <br/>
-![review_id_df.png](Images/review_id_df.png) <br/>
+Balanced Random Forest Classifier
+![random_forest_imbalanced.png](Challenge/Images/random_forest_imbalanced.png) <br/>
 
-Vine DataFrame <br/>
-![vine_df.png](Images/vine_df.png) <br/>
-
-
-## Determine Bias of Vine Reviews 
-
-To start, the DataFrame was filtered to retrieve all the rows that had a count equal to or greater than 20.  This was to pick reviews that are more likely to be helpful and avoids having to divide by zero later on.
-
-![vote_count_20.png](Images/vote_count_20.png) <br/>
-
-The new DataFrame created was filtered to retrieve all the rows where the number of "helpful_votes" divided by "total_votes" was equal to or greater than 50%.
-
-![vote_count_50.png](Images/vote_count_50.png) <br/>
-
-This DataFrame was used to create 2 new DataFrames to sort our data.  One DataFrame was created to showcase all 5 Star reviews by Vine members and the other to showcase 5 Star reviews from non-Vine members.
-
-![vine_program_y.png](Images/vine_program_y.png) <br/>
-![vine_program_n.png](Images/vine_program_n.png) <br/>
+Easy Ensemble AdaBoost Classifier
+![easy_ensemble_imbalanced.png](Challenge/Images/easy_ensemble_imbalanced.png) <br/>
 
 
-## Results of Vine Reviews
+## Summary:
 
-- 61948 total amount of combined reviews<br/>
-
-- 32804 total amount of 5 Star Reviews<br/>
-
-- 139 total amount of 5 Star Vine Reviews<br/>
-
-- 32665 total amount of 5 Star non-Vine Reviews<br/>
-
-- 0.42 percentage of 5 Star Vine Reviews<br/>
-
-- 99.58 percentage of 5 Star non-Vine Reviews<br/>
-
-
-## Summary
-
-We can deterrmine from our data that there is not a positivity bias for reviews in the Vine program.  Over 99.5% of 5 star reviews in the sports category were from non-Vine members.  We believe that Vine members have a tendency to be more critical in the reviews of products.  
-
-To get a better understanding of the data we can use the "verified_purchase" column to sort reviews based on purchase.  That would be able to tell us how many people that purchased the products gave favourable reviews vs non-purchasers.
